@@ -14,21 +14,26 @@ The game is a simple "Chicken Crossing Road" implementation where players contro
 
 ## 🏆 Scoring Rules
 Base points for presentation order:
-- First team: 2500 points
-- Second team: 2000 points
-- Third team: 1500 points
-- Fourth team: 1000 points
-- Fifth team: 500 points
+- First team: 2000 points
+- Second team: 1900 points
+- Third team: 1800 points
+- Fourth team: 1700 points
+- Fifth team: 1600 points
+- Sixth team and after : 1500 points
 
 ### 🧮 Final Score Calculation
 Final Score = (Number of Completed Requirements / 5) × Base Points
 
 Example calculations:
-- First team completes 4/5 requirements: 4/5 × 2500 = 2000 points
-- Second team completes all requirements: 5/5 × 2000 = 2000 points
-- Third team completes 3/5 requirements: 3/5 × 1500 = 900 points
+- First team completes 4/5 requirements: 4/5 × 2000 = 1600 points
+- Second team completes all requirements: 5/5 × 1900 = 1900 points
+- Third team completes 3/5 requirements: 3/5 × 1800 = 1080 points
 
 ### Important Notes:
+- Teams must complete ALL 5 requirements to be eligible for submission
+- Once a team completes all requirements, they should immediately proceed to the main room to submit their presentation order
+- No code changes are allowed after submission
+- Presentation order is final and based on first-come-first-serve basis
 - Teams should carefully consider the trade-off between speed and completeness
 - Partial implementation of a requirement will not be counted
 - Each requirement must be fully functional to be counted
