@@ -11,6 +11,28 @@ The game is a simple "Chicken Crossing Road" implementation where players contro
 - Team Size: 3-4 students per team
 - Presentation: Each team will demonstrate their working solution
 
+## Scoring Rules
+Base points for presentation order:
+- First team: 2500 points
+- Second team: 2000 points
+- Third team: 1500 points
+- Fourth team: 1000 points
+- Fifth team: 500 points
+
+### Final Score Calculation
+Final Score = (Number of Completed Requirements / 5) × Base Points
+
+Example calculations:
+- First team completes 4/5 requirements: 4/5 × 2500 = 2000 points
+- Second team completes all requirements: 5/5 × 2000 = 2000 points
+- Third team completes 3/5 requirements: 3/5 × 1500 = 900 points
+
+### Important Notes:
+- Teams should carefully consider the trade-off between speed and completeness
+- Partial implementation of a requirement will not be counted
+- Each requirement must be fully functional to be counted
+- Requirements will be verified during presentation
+
 ## Game Requirements
 
 ### 1. Chicken Movement
