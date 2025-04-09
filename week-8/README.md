@@ -54,7 +54,7 @@ Example calculations:
   - Random quantity
   - Random directions (left to right or right to left)
   - Random speeds
-  - 1-second spawn interval
+  - 0.2-second spawn interval
   - Cars should appear from both sides of the road
 
 ### 3. 💥 Collision Detection
