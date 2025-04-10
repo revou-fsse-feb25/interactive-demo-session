@@ -25,9 +25,9 @@ Base points for presentation order:
 Final Score = (Number of Completed Requirements / 5) × Base Points
 
 Example calculations:
-- First team completes 4/5 requirements: 4/5 × 2000 = 1600 points
-- Second team completes all requirements: 5/5 × 1900 = 1900 points
-- Third team completes 3/5 requirements: 3/5 × 1800 = 1080 points
+- First team completes 4/5 requirements: 4/5 × 7500 = 6000 points
+- Second team completes all requirements: 5/5 × 7400 = 7400 points
+- Third team completes 3/5 requirements: 3/5 × 7300 = 4380 points
 
 ### Important Notes:
 - Teams must complete ALL 5 requirements to be eligible for submission
