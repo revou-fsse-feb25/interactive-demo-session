@@ -14,12 +14,12 @@ The game is a simple "Chicken Crossing Road" implementation where players contro
 
 ## 🏆 Scoring Rules
 Base points for presentation order:
-- First team: 2000 points
-- Second team: 1900 points
-- Third team: 1800 points
-- Fourth team: 1700 points
-- Fifth team: 1600 points
-- Sixth team and after : 1500 points
+- First team: 7500 points
+- Second team: 7400 points
+- Third team: 7300 points
+- Fourth team: 7200 points
+- Fifth team: 7100 points
+- Sixth team and after : 7000 points
 
 ### 🧮 Final Score Calculation
 Final Score = (Number of Completed Requirements / 5) × Base Points
