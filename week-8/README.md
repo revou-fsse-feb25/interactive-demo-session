@@ -25,7 +25,7 @@ Final Score = (Number of Completed Requirements / 5) × Base Points
 Example calculations:
 - First team completes 4/5 requirements: 4/5 × 2000 = 1600 points
 - Second team completes all requirements: 5/5 × 1800 = 1800 points
-- Third team completes 3/5 requirements: 4/5 × 1600 = 1280 points
+- Third team completes 4/5 requirements: 4/5 × 1600 = 1280 points
 
 ### Important Notes:
 - Teams must complete ALL 5 requirements to be eligible for submission
