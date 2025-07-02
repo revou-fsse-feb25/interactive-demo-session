@@ -1,101 +1,105 @@
 # Week 20 Challenge — NestJS Features
 
-Starter code untuk Week 20 Challenge tentang fitur-fitur NestJS.
+---
 
-## Struktur Proyek
+## 🎯 Endpoints
 
-```
-src/
-├── auth/
-│   ├── dto/
-│   │   ├── login.dto.ts         # TODO: Implement
-│   │   └── register.dto.ts      # TODO: Implement
-│   ├── auth.controller.ts
-│   ├── auth.module.ts
-│   └── auth.service.ts
-├── common/
-│   ├── interceptors/
-│   │   └── remove-password.interceptor.ts  # TODO: Implement
-│   └── middleware/
-│       └── request-logger.middleware.ts     # TODO: Implement
-├── models/
-│   └── user.model.ts
-├── user/
-│   ├── dto/
-│   │   └── update-profile.dto.ts  # TODO: Implement
-│   ├── user.controller.ts
-│   ├── user.module.ts
-│   ├── user.repository.ts
-│   └── user.service.ts
-├── app.module.ts
-└── main.ts
-```
+- `POST /auth/register`: Create new user
+- `POST /auth/login`: Dummy login
+- `GET /user/profile`: Retrieve user profile (no auth required)
+- `PATCH /user/profile`: Update name/password
 
-## Tugas
+---
 
-Lengkapi bagian-bagian yang ditandai dengan TODO:
+### 1. **DTOs (Data Transfer Objects)**
 
-1. **DTOs (Data Transfer Objects)**
-   - `src/auth/dto/register.dto.ts`
-   - `src/auth/dto/login.dto.ts`
-   - `src/user/dto/update-profile.dto.ts`
+- Create DTOs for user registration, login, and profile update.
+- Use `class-validator` decorators to enforce input constraints (e.g., email must be valid, password not empty, etc.).
+- Each incoming request to `/auth/register`, `/auth/login`, and `/user/profile` (PATCH) should be validated with the appropriate DTO.
 
-2. **Interceptor (Password Removal)**
-   - `src/common/interceptors/remove-password.interceptor.ts`
+---
 
-3. **Middleware (Request Logging)**
-   - `src/common/middleware/request-logger.middleware.ts`
+### 2. **Interceptor (Password Removal)**
 
-4. **Dependency Injection**
-   - Sudah diimplementasikan sebagai contoh dalam struktur proyek
+- Develop an interceptor that automatically **removes the `password` field** from any user data in the response.
+  - Should work for single object or array responses.
+  - Should not affect other fields.
+- Apply the interceptor globally or to relevant controllers/routes so that **password is never leaked in any API response**.
 
-## Cara Menjalankan
+---
 
-1. Install dependencies:
-   ```
-   npm install
-   ```
+### 3. **Middleware (Request Logging)**
 
-2. Jalankan aplikasi dalam mode development:
-   ```
-   npm run start:dev
-   ```
+- Create a middleware that logs **method**, **path**, and **timestamp** for every incoming request.
+- This should run early in the request lifecycle (before controllers).
 
-3. Aplikasi akan berjalan di http://localhost:3000
+---
 
-## Endpoint API
+### 4. **Dependency Injection**
 
-- `POST /auth/register`: Membuat user baru
-- `POST /auth/login`: Login dummy
-- `GET /user/profile`: Mendapatkan profil user (tanpa auth)
-- `PATCH /user/profile`: Update nama/password
+- Organize your user data provider (repository) and business logic (service) as injectable classes.
+- Inject repositories into services, and services into controllers using NestJS’s DI framework.
+- Store users in an in-memory array within the repository.
 
-## Pengujian
+---
 
-Gunakan Postman atau curl untuk menguji endpoint API.
+## 📝 Sample Data
 
-### Contoh Data
-
-**Register:**
 ```json
+// Register
 {
   "email": "jane@example.com",
   "password": "pass123",
   "name": "Jane"
 }
-```
 
-**Update Profile:**
-```json
+// Patch
 {
   "name": "Jane Newname"
 }
+
 ```
 
-## Kriteria Sukses
+**Example user object in-memory:**
 
-- Validasi input yang kuat (DTOs)
-- Penanganan respons yang aman (interceptor)
-- Observabilitas yang bersih (middleware)
-- Dependency Injection NestJS yang tepat
-- Kode modular yang jelas (`auth`, `user`, dll.)
+```json
+{
+  "id": "u1",
+  "email": "jane@example.com",
+  "name": "Jane",
+  "password": "pass123"
+}
+```
+
+**Response with interceptor:**
+
+```json
+{
+  "id": "u1",
+  "email": "jane@example.com",
+  "name": "Jane"
+}
+```
+
+---
+
+## 🧪 Testing
+
+- Use Postman or curl to verify endpoints.
+- Ensure DTO validation works (rejects bad input).
+- Confirm password field is never present in any response.
+- Check console logs reflect all requests (from middleware).
+
+---
+
+**Success Criteria:**
+
+- Robust input validation (DTOs)
+- Secure response handling (interceptor)
+- Clean observability (middleware)
+- Proper NestJS service/repository DI
+- Clear modular codebase (`auth`, `user`, etc.)
+
+---
+
+**Happy coding! 🚀**
