@@ -2,6 +2,15 @@
 
 ---
 
+## 🎯 Endpoints
+
+- `POST /auth/register`: Create new user  
+- `POST /auth/login`: Dummy login  
+- `GET /user/profile`: Retrieve user profile (no auth required)  
+- `PATCH /user/profile`: Update name/password  
+
+---
+
 ### 1. **DTOs (Data Transfer Objects)**
 
 - Create DTOs for user registration, login, and profile update.
@@ -31,15 +40,6 @@
 - Organize your user data provider (repository) and business logic (service) as injectable classes.
 - Inject repositories into services, and services into controllers using NestJS’s DI framework.
 - Store users in an in-memory array within the repository.
-
----
-
-## 🎯 Endpoints
-
-- `POST /auth/register`: Create new user  
-- `POST /auth/login`: Dummy login  
-- `GET /user/profile`: Retrieve user profile (no auth required)  
-- `PATCH /user/profile`: Update name/password  
 
 ---
 
