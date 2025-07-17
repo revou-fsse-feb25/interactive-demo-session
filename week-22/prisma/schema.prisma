@@ -1,0 +1,26 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User model - represents a person who can have multiple accounts
+model User {
+  
+}
+
+// Account model - represents a bank account owned by a user
+model Account {
+  
+}
+
+// Transaction model - represents a financial transaction on an account
+model Transaction {
+  
+}
